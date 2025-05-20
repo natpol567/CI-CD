@@ -1,3 +1,7 @@
+"""
+Testy jednostkowe.
+"""
+
 import pytest
 from src.utils import add, subtract, multiply, divide
 
@@ -11,6 +15,7 @@ from src.utils import add, subtract, multiply, divide
     ],
 )
 def test_add(a, b, expected):
+    """Test funkcji add."""
     assert add(a, b) == expected
 
 
@@ -23,6 +28,7 @@ def test_add(a, b, expected):
     ],
 )
 def test_subtract(a, b, expected):
+    """Test funkcji substract."""
     assert subtract(a, b) == expected
 
 
@@ -35,9 +41,11 @@ def test_subtract(a, b, expected):
     ],
 )
 def test_multiply(a, b, expected):
+    """Test funkcji multiply"""
     assert multiply(a, b) == expected
 
 
 def test_divide_by_zero():
+    """Test funkcji divide"""
     with pytest.raises(ValueError):
         divide(1, 0)
